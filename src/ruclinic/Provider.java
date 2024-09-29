@@ -12,8 +12,8 @@ public enum Provider {
 
     private final Location location;
     private final Specialty specialty;
-
-    Provider(Location location, Specialty specialty){
+//constructor always private for enum
+     Provider(Location location, Specialty specialty){
         this.location = location;
         this.specialty = specialty;
     }
