@@ -20,6 +20,15 @@ public class Date implements Comparable<Date> {
         this.month = month;
         this.day = day;
     }
+    public int getYear(){
+        return year;
+    }
+    public int getMonth(){
+        return month;
+    }
+    public int getDay(){
+        return day;
+    }
     private boolean isLeap(int year){
         if(year % QUADRENNIAL == ZERO && year % CENTENNIAL != ZERO){
             return true;
@@ -107,7 +116,7 @@ public class Date implements Comparable<Date> {
     }
 
     public static void main (String[] args){
-        Date date  = new Date(2024, 11, 29);
+      /*  Date date  = new Date(2024, 11, 29);
         Date date2 = new Date(2025, 3, 5);
         boolean confirm = date.isValid();
         boolean confirm2 = date.isValid();
@@ -123,7 +132,7 @@ public class Date implements Comparable<Date> {
             if (compareDates > 0){
                 System.out.println(date2.toString() + " occurs first.");
             }else
-                System.out.println(date.toString() + " occurs first.");
+                System.out.println(date.toString() + " occurs first.");*/
 
     }
 

@@ -20,4 +20,10 @@ public enum Timeslot {
     public int getMinute(){
         return minute;
     }
+
+    @Override
+    public String toString(){
+
+    }
+
 }
