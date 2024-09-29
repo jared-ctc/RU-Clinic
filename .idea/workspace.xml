@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="enum">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/ProfileClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Provider.java" afterDir="false" />
-    </list>
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Profile class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727588865353</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Profile class uploaded">
+      <option name="closed" value="true" />
+      <created>1727625987205</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727625987205</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -112,7 +116,8 @@
     <MESSAGE value="Date class and Enum classes added" />
     <MESSAGE value="Enum classes added" />
     <MESSAGE value="enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="enum" />
+    <MESSAGE value="Profile class uploaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profile class uploaded" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
