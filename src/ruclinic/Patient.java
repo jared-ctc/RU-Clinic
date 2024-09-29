@@ -11,6 +11,13 @@ public class Patient implements Comparable<Patient> {
 
         while (ptr != null)
         {
+            Specialty apptSpecialty = ptr.getAppointment().getProvider().getSpecialty();
+
+            switch (apptSpecialty)
+            {
+                case
+            }
+
             ptr = ptr.getNext();
         }
 
