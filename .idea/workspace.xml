@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="magic number fixed">
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Profile class">
+      <change afterPath="$PROJECT_DIR$/src/ruclinic/Visit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/Timeslot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Timeslot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Patient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -32,12 +32,12 @@
     &quot;assignee&quot;: &quot;LeslieRU213&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/jic48-rutgers/RU-Clinic.git&quot;,
-    &quot;accountId&quot;: &quot;f972bf90-87a1-48fb-8f36-f6a6bd9a2f6f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/jic48-rutgers/RU-Clinic.git",
+    "accountId": "8bccb658-cd27-4487-901f-e48e59762a2a"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/ruclinic/Date.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/ruclinic/Profile.java" root0="SKIP_INSPECTION" />
@@ -121,16 +121,19 @@
       <option name="project" value="LOCAL" />
       <updated>1727626192974</updated>
     </task>
-    <task id="LOCAL-00007" summary="magic number fixed">
-      <option name="closed" value="true" />
-      <created>1727626758360</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1727626758360</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classes added to package" />
@@ -139,8 +142,7 @@
     <MESSAGE value="enum" />
     <MESSAGE value="Profile class uploaded" />
     <MESSAGE value="Profile class" />
-    <MESSAGE value="magic number fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="magic number fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profile class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
