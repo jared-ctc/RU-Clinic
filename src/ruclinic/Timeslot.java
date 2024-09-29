@@ -21,9 +21,6 @@ public enum Timeslot {
         return minute;
     }
 
-    @Override
-    public String toString(){
 
-    }
 
 }

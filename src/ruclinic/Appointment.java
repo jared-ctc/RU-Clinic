@@ -6,6 +6,8 @@ public class Appointment implements Comparable <Appointment> {
     private Profile patient;
     private Provider provider;
 
+    public static final int MIDDAY = 12;
+
     public Appointment(Date date, Timeslot timeslot, Profile patient, Provider provider){
         this.date = date;
         this.timeslot = timeslot;
@@ -25,12 +27,23 @@ public class Appointment implements Comparable <Appointment> {
     }
     @Override
     public String toString(){
-        return date.toString() +
+        String dayTime = "AM";
+        if(this.timeslot.getHour() > MIDDAY){
+            dayTime = "PM";
+        }
+        return date.toString() + " " + this.timeslot.getHour() + ":" + this.timeslot.getMinute();
+
     }
     @Override
     public int compareTo(Appointment appointment){
-
+            int compare = this.date.compareTo(appointment.date);
+            if(compare != 0){
+                return compare;
+            }
+            //same date, compare time slot
+        return this.timeslot.getHour() - appointment.timeslot.getHour();
     }
+
     public Date getDate(){
         return date;
     }

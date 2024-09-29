@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="magic number fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="current changes">
       <change beforePath="$PROJECT_DIR$/src/ruclinic/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Date.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/Timeslot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Timeslot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,16 +52,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Date.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Profile.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/jared/IdeaProjects/RU Clinic/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Appointment.executor": "Run",
+    "Application.Date.executor": "Run",
+    "Application.Profile.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/jared/IdeaProjects/RU Clinic/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -129,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727626758360</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="current changes">
+      <option name="closed" value="true" />
+      <created>1727635626710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727635626710</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -140,7 +147,8 @@
     <MESSAGE value="Profile class uploaded" />
     <MESSAGE value="Profile class" />
     <MESSAGE value="magic number fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="magic number fixed" />
+    <MESSAGE value="current changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="current changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
