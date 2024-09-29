@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ruclinic/Date.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ruclinic/List.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ruclinic/MedicalRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ruclinic/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ruclinic/ProfileClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Date class and Enum classes added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Date.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +17,27 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LeslieRU213&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jic48-rutgers/RU-Clinic.git&quot;,
+    &quot;accountId&quot;: &quot;f972bf90-87a1-48fb-8f36-f6a6bd9a2f6f&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -39,13 +48,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/jared/IdeaProjects/RU Clinic/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Date.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/jared/IdeaProjects/RU Clinic/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,7 +66,21 @@
       <option name="presentableId" value="Default" />
       <updated>1727197347178</updated>
     </task>
+    <task id="LOCAL-00001" summary="Classes added to package">
+      <option name="closed" value="true" />
+      <created>1727200755753</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727200755753</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Classes added to package" />
+    <MESSAGE value="Date class and Enum classes added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Date class and Enum classes added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
