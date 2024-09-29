@@ -5,6 +5,8 @@ public class Profile implements Comparable<Profile>{
     private String lname;
     private Date dob;
 
+    public static final int ZERO = 0;
+
     public Profile(String fname, String lname, Date dob){
         this.fname = fname;
         this.lname = lname;
@@ -40,21 +42,21 @@ public class Profile implements Comparable<Profile>{
     public int compareTo(Profile profile){
         int compareLName = this.lname.compareTo(profile.lname);
         //compare last names first, return if last names are not the same:
-        if(compareLName != 0){
+        if(compareLName != ZERO){
             return compareLName;
         }
         //last names are the same, compare first name:
         int compareFirst = this.fname.compareTo(profile.fname);
-        if(compareFirst != 0){
+        if(compareFirst != ZERO){
             return compareFirst;
         }
         //both profiles have the same first and last name, compare their d.o.b:
         int compareDob = this.dob.compareTo(profile.dob);
-        if(compareDob != 0 ){
+        if(compareDob != ZERO ){
             return compareDob;
         }
         //if the last/first names and dob are the same,  both profiles belong to the same person:
-        return 0;
+        return ZERO;
     }
 
     public static void main(String[] args){/*
