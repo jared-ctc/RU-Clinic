@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Reuploaded the List class">
-      <change afterPath="$PROJECT_DIR$/src/ruclinic/Patient.java" afterDir="false" />
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Reuploaded the Patient class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/List.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" afterDir="false" />
@@ -180,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727708936034</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Reuploaded the Patient class">
+      <option name="closed" value="true" />
+      <created>1727710487001</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1727710487001</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -196,6 +203,7 @@
     <MESSAGE value="Overrode the equals(), compareTo(), and toString() methods for Patient class.&#10;Implemented charge() method to calculate a patient's total costs." />
     <MESSAGE value="Created the MedicalRecord linear data structure to hold a list of Patient objects, along with the add() method to add new Patient entries" />
     <MESSAGE value="Reuploaded the List class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reuploaded the List class" />
+    <MESSAGE value="Reuploaded the Patient class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reuploaded the Patient class" />
   </component>
 </project>
