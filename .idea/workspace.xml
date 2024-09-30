@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Created the MedicalRecord linear data structure to hold a list of Patient objects, along with the add() method to add new Patient entries">
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Reuploaded the List class">
+      <change afterPath="$PROJECT_DIR$/src/ruclinic/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/List.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" afterDir="false" />
@@ -19,13 +19,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -171,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727700412851</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Reuploaded the List class">
+      <option name="closed" value="true" />
+      <created>1727708936034</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1727708936034</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,6 +195,7 @@
     <MESSAGE value="Implemented Visit class as a Linked List of Appointments including relevant methods and instance variables" />
     <MESSAGE value="Overrode the equals(), compareTo(), and toString() methods for Patient class.&#10;Implemented charge() method to calculate a patient's total costs." />
     <MESSAGE value="Created the MedicalRecord linear data structure to hold a list of Patient objects, along with the add() method to add new Patient entries" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the MedicalRecord linear data structure to hold a list of Patient objects, along with the add() method to add new Patient entries" />
+    <MESSAGE value="Reuploaded the List class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reuploaded the List class" />
   </component>
 </project>
