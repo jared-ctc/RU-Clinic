@@ -21,13 +21,18 @@ public class Visit {
         return this.next;
     }
 
+    public void setAppointment(Appointment appointment)
+    {
+        this.appointment = appointment;
+    }
+
     public void setNext(Visit visit)
     {
         this.next = visit;
     }
 
-    public Appointment getAppointment()
-    {
+    public Appointment getAppointment() {
         return this.appointment;
     }
+
 }
