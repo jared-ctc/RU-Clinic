@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Overrode the equals(), compareTo(), and toString() methods for Patient class.&#10;Implemented charge() method to calculate a patient's total costs.">
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="magic number fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Appointment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/MedicalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/MedicalRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Patient.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,39 +130,7 @@
       <option name="project" value="LOCAL" />
       <updated>1727626758360</updated>
     </task>
-    <task id="LOCAL-00008" summary="Added constants and instance variables to List class&#10;Implemented the Constructor, find, grow, contains, add, remove, print, sort, and helper methods">
-      <option name="closed" value="true" />
-      <created>1727681825172</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1727681825172</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Implemented Visit class as a Linked List of Appointments including relevant methods and instance variables">
-      <option name="closed" value="true" />
-      <created>1727682159104</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1727682159104</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Overrode the equals(), compareTo(), and toString() methods for Patient class.&#10;Implemented charge() method to calculate a patient's total costs.">
-      <option name="closed" value="true" />
-      <created>1727682364608</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1727682364608</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Overrode the equals(), compareTo(), and toString() methods for Patient class.&#10;Implemented charge() method to calculate a patient's total costs.">
-      <option name="closed" value="true" />
-      <created>1727682451697</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1727682451697</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -174,10 +141,7 @@
     <MESSAGE value="Profile class uploaded" />
     <MESSAGE value="Profile class" />
     <MESSAGE value="magic number fixed" />
-    <MESSAGE value="Added constants and instance variables to List class&#10;Implemented the Constructor, find, grow, contains, add, remove, print, sort, and helper methods" />
-    <MESSAGE value="Implemented Visit class as a Linked List of Appointments including relevant methods and instance variables" />
-    <MESSAGE value="Overrode the equals(), compareTo(), and toString() methods for Patient class.&#10;Implemented charge() method to calculate a patient's total costs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Overrode the equals(), compareTo(), and toString() methods for Patient class.&#10;Implemented charge() method to calculate a patient's total costs." />
+    <option name="LAST_COMMIT_MESSAGE" value="magic number fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

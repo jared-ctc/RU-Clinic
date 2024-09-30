@@ -50,7 +50,7 @@ public class Appointment implements Comparable <Appointment> {
         }
 
         return date.toString() + " " + timeHour + ":" + minutes + " "
-                + dayTime + " " + /*this.patient.getName() +*/ " "  + this.patient.getDob().toString() + " " +
+                + dayTime + " " + this.patient.getFname() + " " + this.patient.getLname() + " "  + this.patient.getDob().toString() + " " +
                 "[" + this.getProvider() + ", " + this.provider.getLocation() + ", " +
                 this.getProvider().getLocation().getCounty() + " " + this.getProvider().getLocation().getZip() +
                 ", " + this.provider.getSpecialty() + "]";
@@ -67,8 +67,8 @@ public class Appointment implements Comparable <Appointment> {
         return this.timeslot.getHour() - appointment.timeslot.getHour();
     }
 
-    public static void main(String[] args){/*
-        Date dateOfBirth = new Date(1989, 12- 1, 13);
+    public static void main(String[] args){
+        /*Date dateOfBirth = new Date(1989, 12- 1, 13);
         Date app = new Date(2024, 10 - 1, 30);
 
         Profile pa1 = new Profile("John", "Doe", dateOfBirth);
