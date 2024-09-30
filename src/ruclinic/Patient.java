@@ -9,15 +9,11 @@ public class Patient implements Comparable<Patient> {
         Visit ptr = this.visits;
         int totalCharge = 0;
 
+        // traverse linked list of Visits and add charge
         while (ptr != null)
         {
             Specialty apptSpecialty = ptr.getAppointment().getProvider().getSpecialty();
-
-            switch (apptSpecialty)
-            {
-                case
-            }
-
+            totalCharge += apptSpecialty.getCharge();
             ptr = ptr.getNext();
         }
 
@@ -25,8 +21,27 @@ public class Patient implements Comparable<Patient> {
     }
 
     @Override
-    int compareTo(Patient patient)
+    public boolean equals(Object obj)
     {
+        if (obj instanceof Patient)
+        {
+            Patient patient = (Patient) obj;
+            if (this.profile.equals(patient.profile))
+                return true;
+        }
 
+        return false;
+    }
+
+    @Override
+    public int compareTo(Patient patient)
+    {
+        return this.profile.compareTo(patient.profile);
+    }
+
+    @Override
+    public String toString()
+    {
+        return this.profile.toString();
     }
 }
