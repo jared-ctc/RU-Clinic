@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Implemented Main driver function for RunProject1">
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Scheduler class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Date.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/List.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" afterDir="false" />
     </list>
@@ -205,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727711841919</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Scheduler class">
+      <option name="closed" value="true" />
+      <created>1727751502879</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1727751502879</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -224,7 +230,8 @@
     <MESSAGE value="Reuploaded the Patient class" />
     <MESSAGE value="Added mechanism for taking input in Scheduler. Added decision statement for corresponding command line inputs. Added method signatures." />
     <MESSAGE value="Implemented Main driver function for RunProject1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Main driver function for RunProject1" />
+    <MESSAGE value="Scheduler class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scheduler class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

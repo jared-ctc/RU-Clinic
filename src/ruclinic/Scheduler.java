@@ -162,39 +162,107 @@ public class Scheduler {
 
         appointmentSchedule.add(newAppt);
 
-        System.out.println(newAppt.getDate().toString() +
+        System.out.println(newAppt.getDate().toString() + " " +
                 newAppt.getTimeslot().getHour() + ":" +
-                newAppt.getTimeslot().getMinute() +
+                newAppt.getTimeslot().getMinute() + " " +
                 newAppt.getPatient().toString() +
-                "[" + providerName + "," + provider.getLocation());
+                "[" + providerName + ", " + provider.getLocation() + ", " +
+                provider.getLocation().getCounty() + " " +
+                provider.getLocation().getZip() + ", " +
+                provider.getSpecialty() + " booked.");
     }
 
-    private void runCommandC(String[] parsedLine)
+    private void runCommandC(String[] userData)
+    {
+        // Get Appointment date
+        String[] dateString = userData[1].split("/");
+        int[] parsedApptDate = new int[dateString.length];
+        for (int i = 0; i < parsedApptDate.length; i++)
+            parsedApptDate[i] = Integer.parseInt(dateString[i]);
+        Date apptDate = new Date(parsedApptDate[2], parsedApptDate[0] - 1, parsedApptDate[1]);
+
+        // Get timeslot
+
+        int timeslotInput = Integer.parseInt(userData[2]);
+        Timeslot timeslot = Timeslot.SLOT1;
+        switch (timeslotInput) {
+            case 1:
+                timeslot = Timeslot.SLOT1;
+                break;
+            case 2:
+                timeslot = Timeslot.SLOT2;
+                break;
+            case 3:
+                timeslot = Timeslot.SLOT3;
+                break;
+            case 4:
+                timeslot = Timeslot.SLOT4;
+                break;
+            case 5:
+                timeslot = Timeslot.SLOT5;
+                break;
+            case 6:
+                timeslot = Timeslot.SLOT6;
+                break;
+        }
+
+        // get first name last name
+        String fname = userData[3];
+        String lname = userData[4];
+
+        // get dob
+        dateString = userData[5].split("/");
+        int[] parsedBirthDate = new int[dateString.length];
+        for (int i = 0; i < parsedBirthDate.length; i++)
+            parsedBirthDate[i] = Integer.parseInt(dateString[i]);
+        Date birthDate = new Date(parsedBirthDate[2],parsedBirthDate[0] - 1, parsedBirthDate[1]);
+
+        // create profile using fields
+        Profile profile = new Profile(fname, lname, birthDate);
+
+        // create object matching appointment that will be cancelled in List
+        Appointment cancelAppt = new Appointment(apptDate, timeslot, profile);
+
+        appointmentSchedule.remove(cancelAppt);
+
+    }
+
+    private void runCommandR(String[] userData)
     {
 
     }
 
-    private void runCommandR(String[] parsedLine)
+    private void runCommandPA(String[] userData)
     {
-
+        if (appointmentSchedule.isEmpty()) {
+            System.out.println("The schedule calendar is empty.");
+            return;
+        }
+        System.out.println("\n** Appointments ordered by date/time/provider **");
+        appointmentSchedule.printByAppointment();
     }
 
-    private void runCommandPA(String[] parsedLine)
+    private void runCommandPP(String[] userData)
     {
-
+        if (appointmentSchedule.isEmpty()) {
+            System.out.println("The schedule calendar is empty.");
+            return;
+        }
+        System.out.println("\n** Appointments ordered by patient/date/time **");
+        appointmentSchedule.printByPatient();
     }
 
-    private void runCommandPP(String[] parsedLine)
+    private void runCommandPL(String[] userData)
     {
-
+        if (appointmentSchedule.isEmpty()) {
+            System.out.println("The schedule calendar is empty.");
+            return;
+        }
+        System.out.println("\n** Appointments ordered by county/date/time **");
+        appointmentSchedule.printByLocation();
     }
 
-    private void runCommandPL(String[] parsedLine)
-    {
-
-    }
-
-    private void runCommandPS(String[] parsedLine)
+    private void runCommandPS(String[] userData)
     {
 
     }

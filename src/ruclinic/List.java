@@ -14,7 +14,7 @@ public class List {
         appointments = new Appointment[INITIAL_CAPACITY];
     }
 
-    private boolean isEmpty()
+    public boolean isEmpty()
     {
         return (size == 0);
     }
