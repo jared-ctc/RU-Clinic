@@ -8,17 +8,22 @@ public class List {
     private Appointment[] appointments;
     private int size; // number of appointments in array
 
-    /*
-        Comment
-     */
     public List()
     {
         size = 0;
         appointments = new Appointment[INITIAL_CAPACITY];
     }
 
+    private boolean isEmpty()
+    {
+        return (size == 0);
+    }
+
     private int find(Appointment appointment)
     {
+        if (isEmpty())
+            return NOT_FOUND;
+
         for (int i = 0; i < size; i++)
         {
             if (appointment.equals(appointments[i]))
@@ -42,6 +47,9 @@ public class List {
 
     public boolean contains(Appointment appointment)
     {
+        if (isEmpty())
+            return false;
+
         for (int i = 0; i < size; i++)
         {
             if (appointment.equals(appointments[i]))
@@ -53,7 +61,7 @@ public class List {
 
     public void add(Appointment appointment)
     {
-        if (size > appointments.length)
+        if (size == appointments.length)
         {
             grow();
         }
@@ -105,7 +113,7 @@ public class List {
         for (int i = 1; i < size; i++)
         {
             int k = i;
-            for (int j = k - 1; j >= 0; j--)
+            for (int j = k-1; j >= 0; j--)
             {
                 int comparePatient = appointments[k].getPatient().compareTo(appointments[j].getPatient());
                 int compareDate = appointments[k].getDate().compareTo(appointments[j].getDate());
@@ -132,7 +140,7 @@ public class List {
         for (int i = 1; i < size; i++)
         {
             int k = i;
-            for (int j = k - 1; j >= 0; j--)
+            for (int j = k-1; j >= 0; j--)
             {
                 String kcounty = appointments[k].getProvider().getLocation().getCounty();
                 String jcounty = appointments[j].getProvider().getLocation().getCounty();
@@ -162,7 +170,7 @@ public class List {
         for (int i = 1; i < size; i++)
         {
             int k = i;
-            for (int j = k - 1; j >= 0; j--)
+            for (int j = k-1; j >= 0; j--)
             {
                 int compareDate = appointments[k].getDate().compareTo(appointments[j].getDate());
                 int compareTimeslot = appointments[k].getTimeslot().compareTo(appointments[j].getTimeslot());

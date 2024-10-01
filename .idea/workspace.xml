@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Reuploaded the Patient class">
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Implemented Main driver function for RunProject1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Date.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/RunProject1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,17 +56,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Appointment.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Date.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Profile.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/jared/IdeaProjects/RU Clinic/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Appointment.executor": "Run",
+    "Application.Date.executor": "Run",
+    "Application.Profile.executor": "Run",
+    "Application.RunProject1.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/jared/IdeaProjects/RU Clinic/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -187,7 +189,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727710487001</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added mechanism for taking input in Scheduler. Added decision statement for corresponding command line inputs. Added method signatures.">
+      <option name="closed" value="true" />
+      <created>1727711716884</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1727711716884</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Implemented Main driver function for RunProject1">
+      <option name="closed" value="true" />
+      <created>1727711841919</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1727711841919</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,6 +222,18 @@
     <MESSAGE value="Created the MedicalRecord linear data structure to hold a list of Patient objects, along with the add() method to add new Patient entries" />
     <MESSAGE value="Reuploaded the List class" />
     <MESSAGE value="Reuploaded the Patient class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reuploaded the Patient class" />
+    <MESSAGE value="Added mechanism for taking input in Scheduler. Added decision statement for corresponding command line inputs. Added method signatures." />
+    <MESSAGE value="Implemented Main driver function for RunProject1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Main driver function for RunProject1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

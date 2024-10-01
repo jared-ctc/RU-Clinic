@@ -9,12 +9,24 @@ public class Appointment implements Comparable <Appointment> {
 
     public static final int MIDDAY = 12;
 
+    public Appointment(Date date, Timeslot timeslot, Profile patient){
+        this.date = date;
+        this.timeslot = timeslot;
+        this.patient = patient;
+    }
+
     public Appointment(Date date, Timeslot timeslot, Profile patient, Provider provider){
         this.date = date;
         this.timeslot = timeslot;
         this.patient = patient;
         this.provider = provider;
     }
+
+    public void setProvider(Provider provider)
+    {
+        this.provider = provider;
+    }
+
     public Date getDate(){
         return date;
     }

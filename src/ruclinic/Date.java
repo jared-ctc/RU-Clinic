@@ -70,12 +70,7 @@ public class Date implements Comparable<Date> {
         if(day <= ZERO || month < MIN_MONTH || month > MAX_MONTH){
             return false;
         }
-        //tests if the requested date is in the past
-        Calendar dateToday = Calendar.getInstance();
-        if(year < dateToday.get(Calendar.YEAR) || (year == dateToday.get(Calendar.YEAR) && month < dateToday.get(Calendar.MONTH))||
-                (year == dateToday.get(Calendar.YEAR) && month == dateToday.get(Calendar.MONTH) && day < dateToday.get(Calendar.DAY_OF_MONTH))){
-            return false;
-        }
+
       //tests if the date exists in the future
         int monthDays = maxMonthDays(year, month);
         if(day > monthDays){
@@ -83,6 +78,53 @@ public class Date implements Comparable<Date> {
         }
         return true;
     }//add checkpoint for weekend if needed later
+
+    public boolean hasPast()
+    {
+        //tests if the requested date is in the past
+        Calendar dateToday = Calendar.getInstance();
+        if (year < dateToday.get(Calendar.YEAR)
+                || (year == dateToday.get(Calendar.YEAR) && month < dateToday.get(Calendar.MONTH))
+                || (month == dateToday.get(Calendar.MONTH) && day < dateToday.get(Calendar.DAY_OF_MONTH)))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isToday()
+    {
+        Calendar dateToday = Calendar.getInstance();
+        if (year == dateToday.get(Calendar.YEAR)
+            && month == dateToday.get(Calendar.MONTH)
+            && day == dateToday.get(Calendar.DAY_OF_MONTH))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isWeekend()
+    {
+        Calendar date = Calendar.getInstance();
+        date.set(year, month, day);
+        int dayOfWeek = date.get(Calendar.DAY_OF_WEEK);
+
+        if (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /*
+    public boolean withinSixMonths()
+    {
+        Calendar dateToday = Calendar.getInstance();
+        if (dateToday.get(MONTH)
+        if (month - 6)
+    }
+    */
 
     @Override
     public boolean equals (Object obj){
