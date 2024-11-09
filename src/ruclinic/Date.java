@@ -6,6 +6,8 @@ public class Date implements Comparable<Date> {
     private int month;
     private int day;
 
+    Calendar today = Calendar.getInstance();
+
     public static final int MAX_DAYS = 31;
     public static final int MIN_DAYS = 28;
     public static final int MIN_MONTH = 0;
@@ -29,6 +31,7 @@ public class Date implements Comparable<Date> {
     public int getDay(){
         return day;
     }
+
     private boolean isLeap(int year){
         if(year % QUADRENNIAL == ZERO && year % CENTENNIAL != ZERO){
             return true;
@@ -38,6 +41,7 @@ public class Date implements Comparable<Date> {
         }
         return false;
     }
+
     private int maxMonthDays(int year, int month){
         boolean leap = isLeap(year);
         //check leap for feb
@@ -65,13 +69,13 @@ public class Date implements Comparable<Date> {
                     return 0;
             }
     }
+
     public boolean isValid(){
         //day doesn't exist
         if(day <= ZERO || month < MIN_MONTH || month > MAX_MONTH){
             return false;
         }
 
-      //tests if the date exists in the future
         int monthDays = maxMonthDays(year, month);
         if(day > monthDays){
             return false;
@@ -83,6 +87,9 @@ public class Date implements Comparable<Date> {
     {
         //tests if the requested date is in the past
         Calendar dateToday = Calendar.getInstance();
+
+        dateToday.add(Calendar.MONTH, -1);         // REMOVE THIS LINE ONCE DONE WITH PROJECT!!!!
+
         if (year < dateToday.get(Calendar.YEAR)
                 || (year == dateToday.get(Calendar.YEAR) && month < dateToday.get(Calendar.MONTH))
                 || (month == dateToday.get(Calendar.MONTH) && day < dateToday.get(Calendar.DAY_OF_MONTH)))
@@ -117,18 +124,24 @@ public class Date implements Comparable<Date> {
         return false;
     }
 
-    /*
     public boolean withinSixMonths()
     {
-        Calendar dateToday = Calendar.getInstance();
-        if (dateToday.get(MONTH)
-        if (month - 6)
+        Calendar date = Calendar.getInstance();
+
+        date.add(Calendar.MONTH, -1);         // REMOVE THIS LINE ONCE DONE WITH PROJECT!!!!
+
+        date.add(Calendar.MONTH, 6);
+        Date sixMonthsAhead = new Date( date.get(Calendar.YEAR),
+                                        date.get(Calendar.MONTH),
+                                        date.get(Calendar.DAY_OF_MONTH));
+
+        return (this.compareTo(sixMonthsAhead) < 0);
     }
-    */
+
 
     @Override
-    public boolean equals (Object obj){
-        if (obj instanceof Date){
+    public boolean equals(Object obj) {
+        if (obj instanceof Date) {
             Date date = (Date) obj;
             if(this.year == date.year && this.month == date.month && this.day == date.day){
                 return true;
@@ -137,27 +150,30 @@ public class Date implements Comparable<Date> {
         return false;
     }
 
+
     @Override
-    public String toString (){
+    public String toString() {
         //numbers in calendar start at 0(double check)
         return month+1  + "/" + day + "/" + year;
     }
+
+
     @Override
-    public int compareTo(Date date){
-        if(this.year != date.year){
-            //compares years, negative result means this.year comes after date.year and so on
+    public int compareTo(Date date) {
+        if (this.year != date.year) {
+            //compares years, negative result means this (left operand) comes before date (right operand) and so on
             return this.year - date.year;
         }
         //if both dates happen to be in the same year, compare the months
-        if(this.month != date.month){
+        if (this.month != date.month) {
             return this.month - date.month;
         }
         //both dates have the same year and month, compare the day #s
         return this.day - date.day;
-
     }
 
-    public static void main (String[] args){
+
+    public static void main (String[] args) {
       /*  Date date  = new Date(2024, 11, 29);
         Date date2 = new Date(2025, 3, 5);
         boolean confirm = date.isValid();

@@ -4,6 +4,8 @@ import java.util.Calendar;
 
 public class Scheduler {
     private static final int COMMAND_INDEX = 0;
+    private static final int MIN_TIMESLOT = 1;
+    private static final int MAX_TIMESLOT = 6;
 
     public List appointmentSchedule;
 
@@ -18,218 +20,242 @@ public class Scheduler {
 
 
     public void run() {
-        String inputLine = input.nextLine();
-        while (inputLine.isEmpty()) inputLine = input.nextLine();  // reject empty lines
-        
-        String [] userData = inputLine.split(",");
-        String userCommand = userData[COMMAND_INDEX];
+        String inputLine = "";
 
-        while (!userCommand.equals("Q"))
+        while (!inputLine.equals("Q"))
         {
-           switch (userCommand)
-           {
-               case "S":
-                   runCommandS(userData); break;
-               case "C":
-                   runCommandC(userData); break;
-               case "R":
-                   runCommandR(userData); break;
-               case "PA":
-                   runCommandPA(userData); break;
-               case "PP":
-                   runCommandPP(userData); break;
-               case "PL":
-                   runCommandPL(userData); break;
-               case "PS":
-                   runCommandPS(userData); break;
-               default:
-                   System.out.println("Invalid Command!"); break;
-           }
             inputLine = input.nextLine();
-            if (inputLine.isEmpty()) continue;
-            userData = inputLine.split(",");
-            userCommand = userData[COMMAND_INDEX];
-        }
+            while (inputLine.isEmpty())   inputLine = input.nextLine(); // skip empty lines
+            String[] userData = inputLine.split(",");
 
+            String userCommand = userData[0];
+            switch (userCommand)
+            {
+                case "S":
+                    runCommandS(userData); break;
+                case "C":
+                    runCommandC(userData); break;
+                case "R":
+                    runCommandR(userData); break;
+                case "PA":
+                    runCommandPA(userData); break;
+                case "PP":
+                    runCommandPP(userData); break;
+                case "PL":
+                    runCommandPL(userData); break;
+                case "PS":
+                    runCommandPS(userData); break;
+                case "Q":
+                    break;
+                default:
+                    System.out.println("Invalid Command!"); break;
+            }
+        }
     }
 
-    private void runCommandS(String[] userData) {
-        // Create appointment object from parsed userData
-        // parse date (userData[1]) to create Date object
-        String[] dateString = userData[1].split("/");
-        int[] parsedApptDate = new int[dateString.length];
-        for (int i = 0; i < parsedApptDate.length; i++)
-            parsedApptDate[i] = Integer.parseInt(dateString[i]);
-        Date apptDate = new Date(parsedApptDate[2], parsedApptDate[0] - 1, parsedApptDate[1]);
 
-        // check for valid appointment date
+    /*
+        Helper method
+        Takes the second element of userData (a string with format "MM/DD/YY")
+           corresponding to the appointment Date
+        Returns the appointment date as a Date object
+     */
+    private Date toDateObject(String dateString)
+    {
+        String[] parsedStringDate = dateString.split("/");
+        int[] parsedIntDate = new int[parsedStringDate.length];
+        for (int i = 0; i < parsedIntDate.length; i++)
+            parsedIntDate[i] = Integer.parseInt(parsedStringDate[i]);
+        return (new Date(parsedIntDate[2], parsedIntDate[0] - 1, parsedIntDate[1]));
+    }
+
+    private boolean isValidAppointmentDate(Date apptDate)
+    {
         if (!apptDate.isValid()) {
             System.out.println("Appointment date: " + apptDate.toString() +
                     " is not a valid calendar date.");
-            return;
-        } else if (apptDate.hasPast() || apptDate.isToday()) {
+            return false;
+        }
+        else if (apptDate.hasPast() || apptDate.isToday()) {
             System.out.println("Appointment date: " + apptDate.toString() +
                     " is today or a date before today.");
-            return;
-        } else if (apptDate.isWeekend()) {
+            return false;
+        }
+        else if (apptDate.isWeekend()) {
             System.out.println("Appointment date: " + apptDate.toString() +
                     " is Saturday or Sunday.");
-            return;
+            return false;
+        }
+        else if (!apptDate.withinSixMonths()) {
+            System.out.println("Appointment date: " + apptDate.toString() +
+                    " is not within six months.");
+            return false;
         }
 
+        return true;
+    }
 
-        // check for valid time slot
-        if (!Character.isDigit(userData[2].charAt(0))) {
-            System.out.println(userData[2].charAt(0) + " is not a valid time slot.");
-            return;
-        }
-        int timeslotInput = Integer.parseInt(userData[2]);
-        if (timeslotInput < 1 || timeslotInput > 6) {
-            System.out.println(timeslotInput + " is not a valid time slot.");
-            return;
+    private boolean isValidTimeslot(String timeslotString)
+    {
+        if (!Character.isDigit(timeslotString.charAt(0))) {
+            System.out.println(timeslotString.charAt(0) + " is not a valid time slot.");
+            return false;
         }
 
-        Timeslot timeslot = Timeslot.SLOT1;
-        switch (timeslotInput) {
-            case 1:
-                timeslot = Timeslot.SLOT1;
-                break;
-            case 2:
-                timeslot = Timeslot.SLOT2;
-                break;
-            case 3:
-                timeslot = Timeslot.SLOT3;
-                break;
-            case 4:
-                timeslot = Timeslot.SLOT4;
-                break;
-            case 5:
-                timeslot = Timeslot.SLOT5;
-                break;
-            case 6:
-                timeslot = Timeslot.SLOT6;
-                break;
+        int timeslotInt = Integer.parseInt(timeslotString);
+
+        if (timeslotInt < MIN_TIMESLOT || timeslotInt > MAX_TIMESLOT)
+        {
+            System.out.println(timeslotString.charAt(0) + " is not a valid time slot.");
+            return false;
         }
 
+        return true;
+    }
 
-        // check for valid birthdate
-        dateString = userData[5].split("/");
-        int[] parsedBirthDate = new int[dateString.length];
-        for (int i = 0; i < parsedBirthDate.length; i++)
-            parsedBirthDate[i] = Integer.parseInt(dateString[i]);
-        Date birthDate = new Date(parsedBirthDate[2], parsedBirthDate[0] - 1, parsedBirthDate[1]);
+    private boolean isValidBirthDate(Date birthDate)
+    {
         if (!birthDate.isValid()) {
             System.out.println("Patient dob: " + birthDate.toString() +
                     " is not a valid calendar date.");
-            return;
-        } else if (!birthDate.hasPast() || birthDate.isToday()) {
+            return false;
+        }
+        else if (!birthDate.hasPast() || birthDate.isToday()) {
             System.out.println("Patient dob: " + birthDate.toString() +
                     " is today or a date after today.");
-            return;
+            return false;
         }
+        return true;
+    }
 
+    private Timeslot toTimeslotObject(String timeslotString)
+    {
+        int timeslotInt = Integer.parseInt(timeslotString);
 
-        // check for identical appointment
-        String fname = userData[3].toUpperCase();
-        String lname = userData[4].toUpperCase();
-        Profile profile = new Profile(fname, lname, birthDate);
-        Appointment newAppt = new Appointment(apptDate, timeslot, profile);
-        if (appointmentSchedule.contains(newAppt)) {
-            System.out.println(profile.toString() + " has an existing appointment " +
+        switch (timeslotInt) {
+            case 1:
+                return Timeslot.SLOT1;
+            case 2:
+                return Timeslot.SLOT2;
+            case 3:
+                return Timeslot.SLOT3;
+            case 4:
+                return Timeslot.SLOT4;
+            case 5:
+                return Timeslot.SLOT5;
+            case 6:
+                return Timeslot.SLOT6;
+            default:
+                return null;
+        }
+    }
+
+    private boolean appointmentAlreadyExists(Appointment appt)
+    {
+        if (appointmentSchedule.contains(appt)) {
+            System.out.println(appt.getPatient().toString() + " has an existing appointment " +
                     "at the same time slot.");
-            return;
+            return true;
         }
+        return false;
+    }
 
-        String providerName = userData[6].toUpperCase();
-        Provider provider = Provider.PATEL;
-        boolean isValidProvider = false;
-        for (Provider providers : Provider.values()) {
-            if (providers.toString().equals(providerName)) {
-                isValidProvider = true;
-                provider = providers;
-                break;
+
+    private Provider toProviderObject(String providerString)
+    {
+        for (Provider p : Provider.values()) {
+            if (p.name().equals(providerString.toUpperCase())) {
+                return p;
             }
         }
-        if (!isValidProvider)
+        return null;
+    }
+
+
+    private boolean providerIsTaken(Appointment appt)
+    {
+        boolean isTaken = appointmentSchedule.slotIsTaken(appt);
+        if (isTaken)
         {
-            System.out.println(providerName + " - provider doesn't exist.");
-            return;
+            System.out.println(appt.getProvider().toString() +
+                    " is not available at slot " + (appt.getTimeslot().ordinal() + 1));
         }
 
-        //if (appointmentSchedule)
+        return isTaken;
+    }
 
-        newAppt.setProvider(provider);
 
-        appointmentSchedule.add(newAppt);
+    private void runCommandS(String[] userData) {
+        Date apptDate = toDateObject(userData[1]);
+        if (!isValidAppointmentDate(apptDate)) return;
 
-        System.out.println(newAppt.getDate().toString() + " " +
-                newAppt.getTimeslot().getHour() + ":" +
-                newAppt.getTimeslot().getMinute() + " " +
-                newAppt.getPatient().toString() +
-                "[" + providerName + ", " + provider.getLocation() + ", " +
-                provider.getLocation().getCounty() + " " +
-                provider.getLocation().getZip() + ", " +
-                provider.getSpecialty() + " booked.");
+        if (!isValidTimeslot(userData[2])) return;
+        Timeslot timeslot = toTimeslotObject(userData[2]);
+
+        Date birthDate = toDateObject(userData[5]);
+        if (!isValidBirthDate(birthDate)) return;
+
+        Profile profile = new Profile(userData[3], userData[4], birthDate);
+        Appointment newAppointment = new Appointment(apptDate, timeslot, profile);
+        if (appointmentAlreadyExists(newAppointment)) return;
+
+        Provider provider = toProviderObject(userData[6]);
+        if (provider == null) {
+            System.out.println(userData[6] + " - provider doesn't exist.");
+            return;
+        }
+        newAppointment.setProvider(provider);
+        if (providerIsTaken(newAppointment))    return;
+
+        appointmentSchedule.add(newAppointment);
+        System.out.println(newAppointment.toString() + " booked.");
     }
 
     private void runCommandC(String[] userData)
     {
         // Get Appointment date
-        String[] dateString = userData[1].split("/");
-        int[] parsedApptDate = new int[dateString.length];
-        for (int i = 0; i < parsedApptDate.length; i++)
-            parsedApptDate[i] = Integer.parseInt(dateString[i]);
-        Date apptDate = new Date(parsedApptDate[2], parsedApptDate[0] - 1, parsedApptDate[1]);
+        Date apptDate = toDateObject(userData[1]);
 
-        // Get timeslot
+        Timeslot apptTimeslot = toTimeslotObject(userData[2]);
 
-        int timeslotInput = Integer.parseInt(userData[2]);
-        Timeslot timeslot = Timeslot.SLOT1;
-        switch (timeslotInput) {
-            case 1:
-                timeslot = Timeslot.SLOT1;
-                break;
-            case 2:
-                timeslot = Timeslot.SLOT2;
-                break;
-            case 3:
-                timeslot = Timeslot.SLOT3;
-                break;
-            case 4:
-                timeslot = Timeslot.SLOT4;
-                break;
-            case 5:
-                timeslot = Timeslot.SLOT5;
-                break;
-            case 6:
-                timeslot = Timeslot.SLOT6;
-                break;
-        }
-
-        // get first name last name
         String fname = userData[3];
         String lname = userData[4];
-
-        // get dob
-        dateString = userData[5].split("/");
-        int[] parsedBirthDate = new int[dateString.length];
-        for (int i = 0; i < parsedBirthDate.length; i++)
-            parsedBirthDate[i] = Integer.parseInt(dateString[i]);
-        Date birthDate = new Date(parsedBirthDate[2],parsedBirthDate[0] - 1, parsedBirthDate[1]);
-
-        // create profile using fields
+        Date birthDate = toDateObject(userData[5]);
         Profile profile = new Profile(fname, lname, birthDate);
 
         // create object matching appointment that will be cancelled in List
-        Appointment cancelAppt = new Appointment(apptDate, timeslot, profile);
-
-        appointmentSchedule.remove(cancelAppt);
-
+        Appointment cancelAppt = new Appointment(apptDate, apptTimeslot, profile);
+        if (appointmentSchedule.contains(cancelAppt))
+        {
+            appointmentSchedule.remove(cancelAppt);
+            System.out.println(apptDate.toString() +
+                    " " + apptTimeslot.toString() +
+                    " " + profile.toString() +
+                    " has been cancelled.");
+        }
+        else
+        {
+            System.out.println(apptDate.toString() +
+                    " " + apptTimeslot.toString() +
+                    " " + profile.toString() +
+                    " does not exist.");
+        }
     }
 
     private void runCommandR(String[] userData)
     {
+        /*
+        Date apptDate = toDateObject(userData[1]);
+        Timeslot originalTimeslot = toTimeslotObject(userData[2]);
 
+        String fname = userData[3];
+        String lname = userData[4];
+        Date birthDate = toDateObject(userData[5]);
+        Profile profile = new Profile(fname, lname, birthDate);
+
+        Appointment originalAppt =
+
+        */
     }
 
     private void runCommandPA(String[] userData)
@@ -240,6 +266,7 @@ public class Scheduler {
         }
         System.out.println("\n** Appointments ordered by date/time/provider **");
         appointmentSchedule.printByAppointment();
+        System.out.println("** end of list **");
     }
 
     private void runCommandPP(String[] userData)
@@ -250,6 +277,7 @@ public class Scheduler {
         }
         System.out.println("\n** Appointments ordered by patient/date/time **");
         appointmentSchedule.printByPatient();
+        System.out.println("** end of list **");
     }
 
     private void runCommandPL(String[] userData)
@@ -260,6 +288,7 @@ public class Scheduler {
         }
         System.out.println("\n** Appointments ordered by county/date/time **");
         appointmentSchedule.printByLocation();
+        System.out.println("** end of list **");
     }
 
     private void runCommandPS(String[] userData)

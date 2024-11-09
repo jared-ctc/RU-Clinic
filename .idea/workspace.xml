@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Scheduler class">
+    <list default="true" id="956cae16-f560-4005-8a3e-1dfbb56bbb2e" name="Changes" comment="Final contributions before submission">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_24_24,_1_50_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_24_24__1_50_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Date.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Provider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ruclinic/Timeslot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ruclinic/Timeslot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -35,7 +41,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/jic48-rutgers/RU-Clinic.git&quot;,
-    &quot;accountId&quot;: &quot;f972bf90-87a1-48fb-8f36-f6a6bd9a2f6f&quot;
+    &quot;accountId&quot;: &quot;8bccb658-cd27-4487-901f-e48e59762a2a&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -211,8 +217,27 @@
       <option name="project" value="LOCAL" />
       <updated>1727751502879</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Final contributions before submission">
+      <option name="closed" value="true" />
+      <created>1727754583269</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1727754583269</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classes added to package" />
@@ -231,7 +256,8 @@
     <MESSAGE value="Added mechanism for taking input in Scheduler. Added decision statement for corresponding command line inputs. Added method signatures." />
     <MESSAGE value="Implemented Main driver function for RunProject1" />
     <MESSAGE value="Scheduler class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scheduler class" />
+    <MESSAGE value="Final contributions before submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final contributions before submission" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

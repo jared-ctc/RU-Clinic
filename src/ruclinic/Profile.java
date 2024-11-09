@@ -8,21 +8,24 @@ public class Profile implements Comparable<Profile>{
     public static final int ZERO = 0;
 
     public Profile(String fname, String lname, Date dob){
-        this.fname = fname;
-        this.lname = lname;
+        this.fname = fname.toLowerCase();
+        this.lname = lname.toLowerCase();
         this.dob = dob;
     }
+
     public String getFname() {
-        return fname;
+        return fname.substring(0,1).toUpperCase() + fname.substring(1);
     }
 
     public String getLname() {
-        return lname;
+        return lname.substring(0,1).toUpperCase() + lname.substring(1);
     }
 
     public Date getDob() {
         return dob;
     }
+
+
     @Override
     public boolean equals (Object obj){
         if(obj instanceof Profile){
@@ -34,10 +37,14 @@ public class Profile implements Comparable<Profile>{
         }
         return false;
     }
+
+
     @Override
     public String toString(){
-        return fname + " " + lname + " " + dob.toString();
+        return getFname() + " " + getLname() + " " + dob.toString();
     }
+
+
     @Override
     public int compareTo(Profile profile){
         int compareLName = this.lname.compareTo(profile.lname);

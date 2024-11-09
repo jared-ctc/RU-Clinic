@@ -9,23 +9,25 @@ public class Appointment implements Comparable <Appointment> {
 
     public static final int MIDDAY = 12;
 
-    public Appointment(Date date, Timeslot timeslot, Profile patient){
+    public Appointment(Date date, Timeslot timeslot, Profile patient) {
         this.date = date;
         this.timeslot = timeslot;
         this.patient = patient;
     }
 
-    public Appointment(Date date, Timeslot timeslot, Profile patient, Provider provider){
+    public Appointment(Date date, Timeslot timeslot, Profile patient, Provider provider) {
         this.date = date;
         this.timeslot = timeslot;
         this.patient = patient;
         this.provider = provider;
     }
+
 
     public void setProvider(Provider provider)
     {
         this.provider = provider;
     }
+
 
     public Date getDate(){
         return date;
@@ -39,6 +41,8 @@ public class Appointment implements Comparable <Appointment> {
     public Provider getProvider(){
         return provider;
     }
+
+
     @Override
     public boolean equals(Object obj){
         if(obj instanceof Appointment){
@@ -50,8 +54,12 @@ public class Appointment implements Comparable <Appointment> {
         }
         return false;
     }
+
+
     @Override
     public String toString(){
+
+        /*
         DecimalFormat minTime = new DecimalFormat("00");
         String minutes = minTime.format(this.timeslot.getMinute());
         String dayTime = "AM";
@@ -60,14 +68,17 @@ public class Appointment implements Comparable <Appointment> {
             dayTime = "PM";
             timeHour = this.timeslot.getHour() % 12;
         }
+        */
 
-        return date.toString() + " " + timeHour + ":" + minutes + " "
-                + dayTime + " " + this.patient.getFname() + " " + this.patient.getLname() + " "  + this.patient.getDob().toString() + " " +
-                "[" + this.getProvider() + ", " + this.provider.getLocation() + ", " +
-                this.getProvider().getLocation().getCounty() + " " + this.getProvider().getLocation().getZip() +
-                ", " + this.provider.getSpecialty() + "]";
-
+        return date.toString() +
+                " " + timeslot.toString() +
+                //" " + timeHour + ":" + minutes + " " + dayTime +
+                " " + this.patient.getFname() +
+                " " + this.patient.getLname() +
+                " "  + this.patient.getDob().toString() +
+                " " + getProvider().toString();
     }
+
 
     @Override
     public int compareTo(Appointment appointment){

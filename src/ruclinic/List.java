@@ -8,16 +8,19 @@ public class List {
     private Appointment[] appointments;
     private int size; // number of appointments in array
 
+
     public List()
     {
         size = 0;
         appointments = new Appointment[INITIAL_CAPACITY];
     }
 
+
     public boolean isEmpty()
     {
         return (size == 0);
     }
+
 
     private int find(Appointment appointment)
     {
@@ -33,17 +36,19 @@ public class List {
         return NOT_FOUND;
     }
 
+
     private void grow()
     {
-        Appointment[] newAppointments = new Appointment[appointments.length + CAPACITY_INCREASE];
+        Appointment[] newAppointmentsArray = new Appointment[appointments.length + CAPACITY_INCREASE];
 
         for (int i = 0; i < appointments.length; i++)
         {
-            newAppointments[i] = appointments[i];
+            newAppointmentsArray[i] = appointments[i];
         }
 
-        appointments = newAppointments;
+        appointments = newAppointmentsArray;
     }
+
 
     public boolean contains(Appointment appointment)
     {
@@ -59,6 +64,7 @@ public class List {
         return false;
     }
 
+
     public void add(Appointment appointment)
     {
         if (size == appointments.length)
@@ -68,6 +74,7 @@ public class List {
 
         appointments[size++] = appointment;
     }
+
 
     public void remove(Appointment appointment)
     {
@@ -80,6 +87,22 @@ public class List {
         swap(removeIndex, --size);
     }
 
+
+    public boolean slotIsTaken(Appointment appt)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (    appointments[i].getDate().equals(appt.getDate())            &&
+                    appointments[i].getProvider().equals(appt.getProvider())    &&
+                    appointments[i].getTimeslot().equals(appt.getTimeslot())        )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public void printByPatient()
     {
         sortByPatient();
@@ -90,6 +113,7 @@ public class List {
 
     }
 
+
     public void printByLocation()
     {
         sortByLocation();
@@ -99,6 +123,7 @@ public class List {
         }
     }
 
+
     public void printByAppointment()
     {
         sortByAppointment();
@@ -107,6 +132,7 @@ public class List {
             System.out.println(appointments[i].toString());
         }
     }
+
 
     private void sortByPatient()
     {
@@ -134,6 +160,7 @@ public class List {
             }
         }
     }
+
 
     private void sortByLocation()
     {
@@ -165,6 +192,7 @@ public class List {
         }
     }
 
+
     private void sortByAppointment()
     {
         for (int i = 1; i < size; i++)
@@ -174,7 +202,8 @@ public class List {
             {
                 int compareDate = appointments[k].getDate().compareTo(appointments[j].getDate());
                 int compareTimeslot = appointments[k].getTimeslot().compareTo(appointments[j].getTimeslot());
-                int compareProvider = appointments[k].getProvider().compareTo(appointments[j].getProvider());
+                //int compareProvider = appointments[k].getProvider().compareTo(appointments[j].getProvider());
+                int compareProvider = appointments[k].getProvider().toString().compareTo(appointments[j].getProvider().toString());
 
                 // sorts by Date, Timeslot, then Provider
                 if (    compareDate < 0 ||
@@ -191,6 +220,7 @@ public class List {
             }
         }
     }
+
 
     // helper method
     private void swap(int index1, int index2)

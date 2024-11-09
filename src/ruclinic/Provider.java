@@ -23,4 +23,13 @@ public enum Provider {
     public Specialty getSpecialty(){
         return specialty;
     }
+
+    @Override
+    public String toString()
+    {   return "[" + this.name() +
+            ", " + this.getLocation() +
+            ", " + this.getLocation().getCounty() +
+            " " + this.getLocation().getZip() +
+            ", " + this.getSpecialty() + "]";
+    }
 }
