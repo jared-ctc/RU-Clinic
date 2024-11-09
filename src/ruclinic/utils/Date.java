@@ -1,4 +1,5 @@
 package ruclinic.utils;
+
 import java.util.Calendar;
 
 public class Date implements Comparable<Date> {
@@ -17,74 +18,95 @@ public class Date implements Comparable<Date> {
     public static final int QUARTERCENTENNIAL = 400;
     public static final int ZERO = 0;
 
-    public Date (int year, int month, int day){
+    public Date(int year, int month, int day) {
         this.year = year;
         this.month = month;
         this.day = day;
     }
-    public int getYear(){
+
+    public Date() {
+        this.year = Calendar.getInstance().get(Calendar.YEAR);
+        this.month = Calendar.getInstance().get(Calendar.MONTH);
+        this.day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+    }
+
+    public int getYear() {
         return year;
     }
-    public int getMonth(){
+
+    public int getMonth() {
         return month;
     }
-    public int getDay(){
+
+    public int getDay() {
         return day;
     }
 
-    private boolean isLeap(int year){
-        if(year % QUADRENNIAL == ZERO && year % CENTENNIAL != ZERO){
-            return true;
+    private boolean isLeap(int year) {
+        // Step 1: Check if the year is divisible by 4
+        if (year % QUADRENNIAL == ZERO) {
+            // Step 2: Check if the year is divisible by 100
+            if (year % CENTENNIAL == ZERO) {
+                // Step 3: Check if the year is divisible by 400
+                if (year % QUARTERCENTENNIAL == ZERO) {
+                    // Step 4: Year is a leap year
+                    return true;
+                } else {
+                    // Step 5: Year is not a leap year
+                    return false;
+                }
+            } else {
+                // Step 4: Year is a leap year (divisible by 4 but not by 100)
+                return true;
+            }
+        } else {
+            // Step 5: Year is not a leap year
+            return false;
         }
-        if(year % QUARTERCENTENNIAL == ZERO){
-            return true;
-        }
-        return false;
     }
 
-    private int maxMonthDays(int year, int month){
+    private int maxMonthDays(int year, int month) {
         boolean leap = isLeap(year);
         //check leap for feb
-        if(leap && month == Calendar.FEBRUARY){
+        if (leap && month == Calendar.FEBRUARY) {
             return MIN_DAYS + 1;
-        }else
-            if(leap != true && month == Calendar.FEBRUARY){
+        } else if (!leap && month == Calendar.FEBRUARY) {
             return MIN_DAYS;
-            }
-            switch(month){
-                case Calendar.JANUARY:
-                case Calendar.MARCH:
-                case Calendar.MAY:
-                case Calendar.JULY:
-                case Calendar.AUGUST:
-                case Calendar.OCTOBER:
-                case Calendar.DECEMBER:
-                    return MAX_DAYS;
-                case Calendar.APRIL:
-                case Calendar.JUNE:
-                case Calendar.SEPTEMBER:
-                case Calendar.NOVEMBER:
-                    return MAX_DAYS - 1;
-                default:
-                    return 0;
-            }
+        }
+        switch (month) {
+            case Calendar.JANUARY:
+            case Calendar.MARCH:
+            case Calendar.MAY:
+            case Calendar.JULY:
+            case Calendar.AUGUST:
+            case Calendar.OCTOBER:
+            case Calendar.DECEMBER:
+                return MAX_DAYS;
+            case Calendar.APRIL:
+            case Calendar.JUNE:
+            case Calendar.SEPTEMBER:
+            case Calendar.NOVEMBER:
+                return MAX_DAYS - 1;
+            default:
+                return 0;
+        }
     }
 
-    public boolean isValid(){
+    public boolean isValid() {
         //day doesn't exist
-        if(day <= ZERO || month < MIN_MONTH || month > MAX_MONTH){
+        if (day <= ZERO || month < MIN_MONTH || month > MAX_MONTH) {
             return false;
         }
 
         int monthDays = maxMonthDays(year, month);
-        if(day > monthDays){
+
+        if (day > monthDays) {
             return false;
         }
         return true;
     }//add checkpoint for weekend if needed later
 
-    public boolean hasPast()
-    {
+    public boolean hasPast() {
         //tests if the requested date is in the past
         Calendar dateToday = Calendar.getInstance();
 
@@ -92,58 +114,51 @@ public class Date implements Comparable<Date> {
 
         if (year < dateToday.get(Calendar.YEAR)
                 || (year == dateToday.get(Calendar.YEAR) && month < dateToday.get(Calendar.MONTH))
-                || (month == dateToday.get(Calendar.MONTH) && day < dateToday.get(Calendar.DAY_OF_MONTH)))
-        {
+                || (month == dateToday.get(Calendar.MONTH) && day < dateToday.get(Calendar.DAY_OF_MONTH))) {
             return true;
         }
         return false;
     }
 
-    public boolean isToday()
-    {
+    public boolean isToday() {
         Calendar dateToday = Calendar.getInstance();
         if (year == dateToday.get(Calendar.YEAR)
-            && month == dateToday.get(Calendar.MONTH)
-            && day == dateToday.get(Calendar.DAY_OF_MONTH))
-        {
+                && month == dateToday.get(Calendar.MONTH)
+                && day == dateToday.get(Calendar.DAY_OF_MONTH)) {
             return true;
         }
         return false;
     }
 
-    public boolean isWeekend()
-    {
+    public boolean isWeekend() {
         Calendar date = Calendar.getInstance();
         date.set(year, month, day);
         int dayOfWeek = date.get(Calendar.DAY_OF_WEEK);
 
-        if (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY)
-        {
+        if (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY) {
             return true;
         }
         return false;
     }
 
-    public boolean withinSixMonths()
-    {
+    public boolean withinSixMonths() {
         Calendar date = Calendar.getInstance();
 
         date.add(Calendar.MONTH, -1);         // REMOVE THIS LINE ONCE DONE WITH PROJECT!!!!
 
         date.add(Calendar.MONTH, 6);
-        Date sixMonthsAhead = new Date( date.get(Calendar.YEAR),
-                                        date.get(Calendar.MONTH),
-                                        date.get(Calendar.DAY_OF_MONTH));
+        Date sixMonthsAhead = new Date(date.get(Calendar.YEAR),
+                date.get(Calendar.MONTH),
+                date.get(Calendar.DAY_OF_MONTH));
 
         return (this.compareTo(sixMonthsAhead) < 0);
     }
-
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Date) {
             Date date = (Date) obj;
-            if(this.year == date.year && this.month == date.month && this.day == date.day){
+            if (this.year == date.year && this.month == date.month && this.day == date.day) {
                 return true;
             }
         }
@@ -154,9 +169,8 @@ public class Date implements Comparable<Date> {
     @Override
     public String toString() {
         //numbers in calendar start at 0(double check)
-        return month+1  + "/" + day + "/" + year;
+        return month + 1 + "/" + day + "/" + year;
     }
-
 
     @Override
     public int compareTo(Date date) {
@@ -173,7 +187,7 @@ public class Date implements Comparable<Date> {
     }
 
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
       /*  Date date  = new Date(2024, 11, 29);
         Date date2 = new Date(2025, 3, 5);
         boolean confirm = date.isValid();
