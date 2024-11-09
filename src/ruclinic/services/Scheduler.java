@@ -1,6 +1,12 @@
-package ruclinic;
+package ruclinic.services;
+import ruclinic.enums.Provider;
+import ruclinic.enums.Timeslot;
+import ruclinic.models.Appointment;
+import ruclinic.models.Profile;
+import ruclinic.utils.Date;
+import ruclinic.utils.List;
+
 import java.util.Scanner;
-import java.util.Calendar;
 
 public class Scheduler {
     private static final int COMMAND_INDEX = 0;

@@ -1,4 +1,6 @@
-package ruclinic;
+package ruclinic.models;
+
+import ruclinic.utils.Date;
 
 public class Profile implements Comparable<Profile>{
     private String fname;

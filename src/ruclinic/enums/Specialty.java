@@ -1,4 +1,4 @@
-package ruclinic;
+package ruclinic.enums;
 
 public enum Specialty {
     FAMILY(250),

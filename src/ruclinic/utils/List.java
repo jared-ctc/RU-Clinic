@@ -1,4 +1,6 @@
-package ruclinic;
+package ruclinic.utils;
+
+import ruclinic.models.Appointment;
 
 public class List {
     private static final int INITIAL_CAPACITY = 4;

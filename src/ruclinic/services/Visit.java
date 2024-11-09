@@ -1,4 +1,6 @@
-package ruclinic;
+package ruclinic.services;
+
+import ruclinic.models.Appointment;
 
 public class Visit {
     private Appointment appointment;

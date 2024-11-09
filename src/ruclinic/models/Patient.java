@@ -1,4 +1,7 @@
-package ruclinic;
+package ruclinic.models;
+
+import ruclinic.enums.Specialty;
+import ruclinic.services.Visit;
 
 public class Patient implements Comparable<Patient> {
     private Profile profile;

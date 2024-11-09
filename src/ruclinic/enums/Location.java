@@ -1,4 +1,4 @@
-package ruclinic;
+package ruclinic.enums;
 
 public enum Location {
     BRIDGEWATER("Somerset", "08807"),

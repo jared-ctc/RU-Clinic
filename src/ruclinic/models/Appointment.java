@@ -1,5 +1,7 @@
-package ruclinic;
-import java.text.DecimalFormat;
+package ruclinic.models;
+import ruclinic.utils.Date;
+import ruclinic.enums.Provider;
+import ruclinic.enums.Timeslot;
 
 public class Appointment implements Comparable <Appointment> {
     private Date date;

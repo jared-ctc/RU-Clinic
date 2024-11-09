@@ -1,4 +1,4 @@
-package ruclinic;
+package ruclinic.enums;
 
 public enum Provider {
     PATEL(Location.BRIDGEWATER, Specialty.FAMILY),

@@ -1,4 +1,4 @@
-package ruclinic;
+package ruclinic.enums;
 
 import java.text.DecimalFormat;
 
